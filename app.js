@@ -66,3 +66,15 @@ app.post("/register", function (req, res) {
 		});
 	});
 });
+
+//Showing login form
+app.get("/login", function (req, res) {
+	res.render("login");
+});
+
+//Handling user login
+app.post("/login", passport.authenticate("local", {
+	successRedirect: "/secret",
+	failureRedirect: "/login"
+}), function (req, res) {
+});
