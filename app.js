@@ -38,3 +38,8 @@ passport.deserializeUser(User.deserializeUser());
 app.get("/", function (req, res) {
 	res.render("home");
 });
+
+// Showing secret page
+app.get("/secret", isLoggedIn, function (req, res) {
+	res.render("secret");
+});
