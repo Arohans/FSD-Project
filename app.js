@@ -43,3 +43,8 @@ app.get("/", function (req, res) {
 app.get("/secret", isLoggedIn, function (req, res) {
 	res.render("secret");
 });
+
+// Showing register form
+app.get("/register", function (req, res) {
+	res.render("register");
+});
